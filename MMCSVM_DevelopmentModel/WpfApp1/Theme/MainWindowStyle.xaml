@@ -1,0 +1,101 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Color x:Key="TriangleButton_Background">white</Color>
+    <SolidColorBrush x:Key="ButtonC_Background" Color="DarkBlue"/>
+
+    
+    <Style x:Key="TriangleButton" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Polygon x:Name="ButtonTriangle" Points="-60,70 0,-70 60,70" Stroke="#787E83"  StrokeThickness="2">
+                            <Polygon.Fill>
+                                <SolidColorBrush Color="{DynamicResource TriangleButton_Background}"/>
+                            </Polygon.Fill>
+                        </Polygon>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Path.Fill" Value="Aquamarine" TargetName="ButtonTriangle" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonC" BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type Button}" >
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="150" Height="35" CornerRadius="8" Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Background" Value="{DynamicResource ButtonC_Background}"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style.Setters>
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="Aquamarine" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="ButtonE" BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type Button}" >
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="80" Height="30" CornerRadius="8" Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Background" Value="#4472C4"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style.Setters>
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="Aquamarine" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+    <ControlTemplate x:Key="RoundButtonA" TargetType="Button">
+        <Grid>
+            <Ellipse x:Name="backgroundElement" Fill="White" Stroke="LightBlue" StrokeThickness="20" />
+            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter TargetName="backgroundElement" Property="Path.Fill" Value="Aquamarine" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="RoundButtonC" TargetType="Button">
+        <Grid>
+            <Ellipse x:Name="backgroundElement" Fill="#5A5657" Stroke="LightBlue" StrokeThickness="3" />
+            <ContentPresenter TextBlock.FontSize="20" TextBlock.FontWeight="SemiBold" TextBlock.TextAlignment="Center" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter TargetName="backgroundElement" Property="Path.Fill" Value="DarkGray" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+
+</ResourceDictionary>

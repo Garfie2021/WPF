@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="WpfApp1.MainWindow_OverlayB"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp1"
+             mc:Ignorable="d" 
+             d:DesignWidth="6400" d:DesignHeight="3750" >
+
+    <UserControl.Resources>
+        <ResourceDictionary Source="/Theme/MainWindowStyle.xaml"/>
+    </UserControl.Resources>
+
+    <Canvas x:Name="CanvasB">
+        <Canvas.RenderTransform>
+            <RotateTransform Angle="0" CenterX="3200" CenterY="1875"/>
+        </Canvas.RenderTransform>
+
+        <Button Content="MainWindow_OverlayB layer Click" Panel.ZIndex="15" Canvas.Left="50" Canvas.Top="1500" Width="1500" Height="150" FontWeight="Medium" 
+                FontSize="80" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click" />
+    </Canvas>
+</UserControl>
